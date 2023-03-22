@@ -1,0 +1,11 @@
+<div>
+  <h2>Open Account</h2>
+  <label for="customerID">Customer ID:</label>
+  <input [(ngModel)]="customerID" id="customerID" type="number" />
+  <br />
+  <label for="initialCredit">Initial Credit:</label>
+  <input [(ngModel)]="initialCredit" id="initialCredit" type="number" />
+  <br />
+  <button (click)="openAccount()">Open Account</button>
+  <p *ngIf="newAccountId">New account ID: {{ newAccountId }}</p>
+</div>

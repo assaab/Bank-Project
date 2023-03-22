@@ -1,0 +1,20 @@
+<div>
+  <h2>User Info</h2>
+  <label for="customerID">Customer ID:</label>
+  <input [(ngModel)]="customerID" id="customerID" type="number" />
+  <br />
+  <button (click)="getUserInfo()">Get User Info</button>
+  <div *ngIf="userInfo">
+    <h3>Accounts</h3>
+    <div *ngFor="let account of userInfo.accounts">
+      <h4>Account ID: {{ account.accountID }}</h4>
+      <p>Balance: {{ account.balance }}</p>
+      <h4>Transactions</h4>
+      <ul>
+        <li *ngFor="let transaction of account.transactions">
+          Amount: {{ transaction.amount }}, Date: {{ transaction.date | date }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
